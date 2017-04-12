@@ -39,13 +39,19 @@ exports.run = async(client, msg) => {
         }
     });
 
-    collector.on('end', collected => {
-        if(playertwo == undefined && playerthree == undefined) return msg.channel.sendMessage("no want to die.. sad.");
+    collector.on('end', async(collected) => {
+        if (playertwo == undefined && playerthree == undefined) return msg.channel.sendMessage("no want to die.. sad.");
         var players = [playerone, playertwo];
-        if(playerthree != undefined) { players.push(playerthree);}
-        var winner = players[Math.floor(Math.random()*players.length)];
-        msg.reply("AND THE WINNER IS: " + winner);
-        });
+        if (playerthree != undefined) {
+            players.push(playerthree);
+        }
+        var winner = players[Math.floor(Math.random() * players.length)];
+        await msg.channel.sendMessage("AND THE WINNER IS: " + winner + ". well and everyone else is dead.");
+        const winnerrow = await sql.get(`SELECT * FROM scores WHERE userId ='${winner.id}'`);
+        await sql.run(`UPDATE scores SET points = ${winnerrow.points + 120} WHERE userId = ${winner.id}`);
+        const finalrow = await sql.get(`SELECT * FROM scores WHERE userId ='${winner.id}'`);
+        await msg.channel.sendMessage(winner + " scores is now " + finalrow.points);
+    });
 }
 
 exports.conf = {
@@ -58,7 +64,7 @@ exports.conf = {
 }
 
 exports.help = {
-    name: "russian-roullete",
-    description: "Starts a Game of Russisan Roullete.",
+    name: "russian-roulette",
+    description: "Starts a Game of Russisan Roulette.",
     usage: ""
 }
