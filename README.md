@@ -10,9 +10,9 @@ This Repo is here to give the Source Code to you all. Constend Updates under dev
 
 ### How do I get set up? ###
 
-* Summary of set up
+* Summary of set up*
 You will need to install node.js 7.*.* on your System as well as the Newest Version of NPM.
-* Configuration
+* Configuration*
 Just Clone the Repo and Run npm install
 You will need to create a Settings File like settings_example.json in config.
 Start the App with node app.js
@@ -23,4 +23,4 @@ Just Tell me what you did and Assign me.
 
 ### Who do I talk to? ###
 
-Hit me up on Discord [here](https://discord.gg/sfZC8T4)
+Hit me up on Discord [here](https://discord.gg/xYjbUhE)
