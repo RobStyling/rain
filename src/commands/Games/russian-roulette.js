@@ -48,7 +48,15 @@ exports.run = async(client, msg) => {
         var winner = players[Math.floor(Math.random() * players.length)];
         await msg.channel.sendMessage("AND THE WINNER IS: " + winner + ". well and everyone else is dead.");
         const winnerrow = await sql.get(`SELECT * FROM scores WHERE userId ='${winner.id}'`);
-        await sql.run(`UPDATE scores SET points = ${winnerrow.points + 120} WHERE userId = ${winner.id}`);
+        await sql.run(`UPDATE scores SET points = ${winnerrow.points + 240} WHERE userId = ${winner.id}`);
+        const playeronerows = await sql.get(`SELECT * FROM scores WHERE userId ='${playerone.id}'`);
+        await sql.run(`UPDATE scores SET points = ${playeronerows.points - 120} WHERE userId = ${playerone.id}`);
+        const playertworows = await sql.get(`SELECT * FROM scores WHERE userId ='${playertwo.id}'`);
+        await sql.run(`UPDATE scores SET points = ${playertworows.points - 120} WHERE userId = ${playertwo.id}`);
+        if (playerthree != undefined) {
+            const playerthreerows = await sql.get(`SELECT * FROM scores WHERE userId ='${playerthree.id}'`);
+            await sql.run(`UPDATE scores SET points = ${playerthreerows.points + 120} WHERE userId = ${playerthree.id}`);
+        }
         const finalrow = await sql.get(`SELECT * FROM scores WHERE userId ='${winner.id}'`);
         await msg.channel.sendMessage(winner + " scores is now " + finalrow.points);
     });
