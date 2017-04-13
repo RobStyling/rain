@@ -2,5 +2,5 @@ language: node_js
 node_js:
   - "7"
 "scripts": {
-  "test": "app.js"
+  "test": "src/app.js"
 },
