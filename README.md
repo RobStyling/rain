@@ -1,6 +1,7 @@
 # Rain - Discord.js Bot #
 
-![travis-ci-build](https://travis-ci.org/RobStyling/rain.svg?branch=master "Travis CI")
+Master: ![travis-ci-build](https://travis-ci.org/RobStyling/rain.svg?branch=master "Travis CI")
+Develop ![travis-ci-build-dev](https://travis-ci.org/RobStyling/rain.svg?branch=develop "Travis CI")
 
 Welcome to the Repo for the Rain Discord.js Bot
 
