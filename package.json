@@ -20,7 +20,7 @@
 },
   "scripts": {
     "start": "node app.js",
-    "test": "eslint .silent"
+    "test": "eslint ."
   },
   "keywords": [
     "rain",
