@@ -7,7 +7,7 @@ Welcome to the Repo for the Rain Discord.js Bot
 
 ### What is this repository for? ###
 
-This Repo is here to give the Source Code to you all. Constend Updates under develop. Feautures are under /feauture Branches.
+This Repo is here to give the Source Code to you all. Constant Updates under develop. Feautures are under /feauture Branches.
 * v.0.0.1 < indev
 * [Invite Link for Discord](https://discordapp.com/oauth2/authorize?client_id=297795379557040128&scope=bot&permissions=8)
 
